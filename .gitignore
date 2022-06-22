@@ -3,3 +3,5 @@
 dist
 unpackage
 node_modules
+.hbuilderx
+.vite
