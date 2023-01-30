@@ -1,0 +1,67 @@
+const cmd = db.command
+
+// 比较运算
+// db.collection('students').where({
+// 	// 相等
+// 	// name: cmd.eq('张三')
+// 	// 不等于
+// 	// name: cmd.neq('张三')
+// 	// 小于
+// 	// age: cmd.lt(20)
+// 	// 在范围内
+// 	// name: cmd.in(['张三', '李四'])
+// 	// 不在范围内
+// 	name: cmd.nin(['张三', '李四'])
+// }).get()
+
+// 逻辑运算
+// 与
+// 查询 20 ~ 30 岁之间的数据
+db.collection('students').where(cmd.and([{
+	age: cmd.gt(20)
+}, {
+	age: cmd.lt(30)
+}])).get()
+
+
+// 或
+// 查询 小于20 或 大于30 岁之间的数据
+// db.collection('students').where(cmd.or([{
+// 	age: cmd.lt(20)
+// }, {
+// 	age: cmd.gt(30)
+// }])).get()
+
+// 非
+// 查询性别不为女的数据
+// db.collection('students').where({
+// 	sex: cmd.not(cmd.eq('female'))
+// }).get()
+
+// 异或
+// 异或表示 "都不是"，给出条件都不满足
+// 例如: 查询性别不是男和女的数据
+// db.collection('students').where(cmd.nor([{
+// 	sex: 'male'
+// }, {
+// 	sex: 'female'
+// }])).get({getOne: true})
+
+// 查询是否存在符合条件的数据
+// db.collection('students').where({name: '张三'}).exists()
+
+const page = 1
+const size = 3
+
+// db.collection('students')
+// 	.orderBy('updatedAt', 'desc')
+// 	.skip((page - 1) * size)
+// 	.limit(size)
+// 	.get()
+
+// db.collection('uni-id-users').where({
+// 	_id: "63d76ba0f43e60b2ba713631"
+// }).get()
+
+db.collection('uni-id-users').doc(
+	"63d76ba0f43e60b2ba713631").get()

@@ -1,0 +1,36 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"title": "id",
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"title": "姓名"
+		},
+		"sex": {
+			"bsonType": "string",
+			"title": "性别"
+		},
+		"age": {
+			"bsonType": "int",
+			"title": "年龄"
+		},
+		"createdAt": {
+			"bsonType": "date",
+			"title": "创建时间"
+		},
+		"updatedAt": {
+			"bsonType": "date",
+			"title": "更新时间"
+		}
+	}
+}

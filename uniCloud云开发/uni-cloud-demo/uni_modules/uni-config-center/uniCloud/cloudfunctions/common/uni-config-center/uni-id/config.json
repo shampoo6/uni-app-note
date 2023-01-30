@@ -1,0 +1,25 @@
+{
+  "passwordSecret": [
+    {
+      "type": "hmac-sha256",
+      "version": 1
+    }
+  ],
+  "passwordStrength": "medium",
+  "tokenSecret": "badboy0619",
+  "requestAuthSecret": "",
+  "tokenExpiresIn": 7200,
+  "tokenExpiresThreshold": 3600,
+  "passwordErrorLimit": 6,
+  "passwordErrorRetryTime": 3600,
+  "autoSetInviteCode": false,
+  "forceInviteCode": false,
+  "app": {
+    "tokenExpiresIn": 2592000,
+    "tokenExpiresThreshold": 864000
+  },
+  "web": {
+    "tokenExpiresIn": 7200,
+    "tokenExpiresThreshold": 3600
+  }
+}

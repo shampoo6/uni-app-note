@@ -19,6 +19,7 @@
 
 <script>
 	import netConfig from '@/config/net.config.js'
+	import datas from '@/datas.js'
 
 	export default {
 		name: "video-category",
@@ -55,6 +56,14 @@
 					console.log(reason);
 				}
 			})
+
+			// 调用假数据
+			// this.listData = datas[this.title].subjects.map(item => ({
+			// 	id: item.id,
+			// 	cover: item.cover,
+			// 	name: item.title,
+			// 	rate: item.rate
+			// }))
 		},
 		data() {
 			return {
