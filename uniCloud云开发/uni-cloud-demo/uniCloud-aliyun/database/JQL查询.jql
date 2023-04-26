@@ -48,7 +48,7 @@ db.collection('students').where(cmd.and([{
 // }])).get({getOne: true})
 
 // 查询是否存在符合条件的数据
-// db.collection('students').where({name: '张三'}).exists()
+// db.collection('students').where({name: cmd.exists(true)})
 
 const page = 1
 const size = 3
@@ -65,3 +65,12 @@ const size = 3
 
 db.collection('uni-id-users').doc(
 	"63d76ba0f43e60b2ba713631").get()
+
+
+// 讲字符串当作脚本在数据库执行
+// 脚本必须是布尔表达式
+// 脚本中可以直接访问doc中的任意字段
+db.collection('students').where('age > 17').get()
+
+// 利用该功能可以实现正则匹配
+db.collection('students').where(`${new RegExp('张三')}.test(name)`).get()
